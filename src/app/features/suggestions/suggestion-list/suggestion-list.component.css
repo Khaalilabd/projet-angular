@@ -1,0 +1,443 @@
+/* Container principal */
+.suggestions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Section d'en-tête */
+.header-section {
+  margin-bottom: 32px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-suggestions::before {
+  content: '💡';
+  font-size: 2rem;
+}
+
+/* Barre de recherche */
+.search-container {
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.search-icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  color: #718096;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  font-size: 1rem;
+  color: #2d3748;
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: #a0aec0;
+}
+
+.clear-search-btn {
+  background: none;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.clear-search-btn:hover {
+  background: #f7fafc;
+  color: #4a5568;
+}
+
+/* Filtres */
+.filters-section {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #2d3748;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-select:hover {
+  border-color: #cbd5e0;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+/* Informations sur les résultats */
+.results-info {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #ebf8ff;
+  border: 1px solid #bee3f8;
+  border-radius: 8px;
+}
+
+.results-count {
+  color: #2b6cb0;
+  font-weight: 500;
+}
+
+/* Grille des suggestions */
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+/* Cartes de suggestions */
+.suggestion-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+/* En-tête de carte */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.title-section {
+  flex: 1;
+}
+
+.suggestion-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #edf2f7;
+  color: #4a5568;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.category-badge[data-category="UI/UX"] {
+  background: #e6fffa;
+  color: #234e52;
+}
+
+.category-badge[data-category="Feature"] {
+  background: #fef5e7;
+  color: #744210;
+}
+
+.category-badge[data-category="Performance"] {
+  background: #f0fff4;
+  color: #22543d;
+}
+
+/* Statuts */
+.status-container {
+  flex-shrink: 0;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-acceptee {
+  background: #f0fff4;
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+.status-en-attente {
+  background: #fefcbf;
+  color: #744210;
+  border: 1px solid #f6e05e;
+}
+
+/* Contenu de carte */
+.card-content {
+  margin-bottom: 20px;
+}
+
+.suggestion-description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+}
+
+.meta-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.date-info, .likes-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+/* Actions */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #f7fafc;
+  color: #4a5568;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.like-btn {
+  border-color: #fed7e2;
+  background: #fef5e7;
+}
+
+.like-btn:hover {
+  background: #fed7e2;
+  border-color: #f687b3;
+  transform: scale(1.02);
+}
+
+.favorite-btn {
+  border-color: #bee3f8;
+  background: #ebf8ff;
+}
+
+.favorite-btn:hover {
+  background: #bee3f8;
+  border-color: #90cdf4;
+  transform: scale(1.02);
+}
+
+.favorite-btn.active {
+  background: #ffd700;
+  border-color: #f6ad55;
+  color: #744210;
+}
+
+.details-btn {
+  border-color: #c3dafe;
+  background: #ebf4ff;
+  color: #2c5282;
+}
+
+.details-btn:hover {
+  background: #c3dafe;
+  border-color: #a3bffa;
+  transform: scale(1.02);
+}
+
+.likes-count {
+  font-weight: 600;
+  color: #e53e3e;
+}
+
+.favorite-text {
+  font-weight: 500;
+}
+
+/* Message pour suggestions refusées */
+.rejected-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fed7d7;
+  border: 1px solid #fc8181;
+  border-radius: 8px;
+  color: #742a2a;
+  font-size: 0.875rem;
+  margin-top: 16px;
+}
+
+.suggestion-card.rejected {
+  opacity: 0.7;
+  background: #fafafa;
+  border-color: #e53e3e;
+}
+
+/* Aucun résultat */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-results-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.icon-search-empty {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  color: #4a5568;
+  margin: 0 0 8px 0;
+}
+
+.no-results p {
+  color: #718096;
+  margin: 0;
+}
+
+/* Statuts */
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-acceptee {
+  background: #f0fff4;
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+.status-refusee {
+  background: #fed7d7;
+  color: #742a2a;
+  border: 1px solid #fc8181;
+}
+
+.status-en-attente {
+  background: #fefcbf;
+  color: #744210;
+  border: 1px solid #f6e05e;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .suggestions-container {
+    padding: 16px;
+  }
+  
+  .suggestions-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

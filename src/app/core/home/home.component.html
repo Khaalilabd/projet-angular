@@ -1,0 +1,135 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text animate-fade-in">
+        <h1 class="hero-title">
+          Bienvenue sur 
+          <span class="gradient-text">SuggestionHub</span>
+        </h1>
+        <p class="hero-subtitle">
+          Partagez vos idées, votez pour les meilleures suggestions et contribuez à l'amélioration continue de notre plateforme
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" routerLink="/suggestions">
+            <span class="btn-icon">💡</span>
+            Voir les suggestions
+          </button>
+          <button class="btn btn-secondary" routerLink="/suggestions">
+            <span class="btn-icon">➕</span>
+            Créer une suggestion
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-illustration animate-float">
+        <div class="illustration-card card-1">
+          <div class="card-icon">💡</div>
+          <div class="card-text">Idées innovantes</div>
+        </div>
+        <div class="illustration-card card-2">
+          <div class="card-icon">⭐</div>
+          <div class="card-text">Favoris</div>
+        </div>
+        <div class="illustration-card card-3">
+          <div class="card-icon">❤️</div>
+          <div class="card-text">Votes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card animate-slide-up" style="animation-delay: 0.1s">
+        <div class="stat-icon">📊</div>
+        <div class="stat-number">{{ totalSuggestions }}</div>
+        <div class="stat-label">Suggestions totales</div>
+      </div>
+      <div class="stat-card animate-slide-up" style="animation-delay: 0.2s">
+        <div class="stat-icon">✅</div>
+        <div class="stat-number">{{ acceptedSuggestions }}</div>
+        <div class="stat-label">Suggestions acceptées</div>
+      </div>
+      <div class="stat-card animate-slide-up" style="animation-delay: 0.3s">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-number">{{ pendingSuggestions }}</div>
+        <div class="stat-label">En attente</div>
+      </div>
+      <div class="stat-card animate-slide-up" style="animation-delay: 0.4s">
+        <div class="stat-icon">👥</div>
+        <div class="stat-number">{{ totalUsers }}</div>
+        <div class="stat-label">Utilisateurs actifs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <h2 class="section-title animate-fade-in">Fonctionnalités principales</h2>
+    <div class="features-grid">
+      <div class="feature-card animate-scale" style="animation-delay: 0.1s">
+        <div class="feature-icon">🔍</div>
+        <h3 class="feature-title">Recherche avancée</h3>
+        <p class="feature-description">
+          Trouvez rapidement les suggestions qui vous intéressent grâce à notre système de recherche et de filtres
+        </p>
+      </div>
+      
+      <div class="feature-card animate-scale" style="animation-delay: 0.2s">
+        <div class="feature-icon">❤️</div>
+        <h3 class="feature-title">Système de votes</h3>
+        <p class="feature-description">
+          Votez pour vos suggestions préférées et aidez les meilleures idées à émerger
+        </p>
+      </div>
+      
+      <div class="feature-card animate-scale" style="animation-delay: 0.3s">
+        <div class="feature-icon">⭐</div>
+        <h3 class="feature-title">Favoris</h3>
+        <p class="feature-description">
+          Sauvegardez vos suggestions favorites pour y accéder facilement plus tard
+        </p>
+      </div>
+      
+      <div class="feature-card animate-scale" style="animation-delay: 0.4s">
+        <div class="feature-icon">📈</div>
+        <h3 class="feature-title">Suivi en temps réel</h3>
+        <p class="feature-description">
+          Suivez l'évolution de vos suggestions et recevez des notifications sur leur statut
+        </p>
+      </div>
+      
+      <div class="feature-card animate-scale" style="animation-delay: 0.5s">
+        <div class="feature-icon">🏷️</div>
+        <h3 class="feature-title">Catégorisation</h3>
+        <p class="feature-description">
+          Organisez les suggestions par catégories pour une meilleure navigation
+        </p>
+      </div>
+      
+      <div class="feature-card animate-scale" style="animation-delay: 0.6s">
+        <div class="feature-icon">🎯</div>
+        <h3 class="feature-title">Tri intelligent</h3>
+        <p class="feature-description">
+          Triez les suggestions par date, popularité ou titre selon vos préférences
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content animate-fade-in">
+      <h2 class="cta-title">Prêt à partager vos idées ?</h2>
+      <p class="cta-text">
+        Rejoignez notre communauté et contribuez à l'amélioration continue de notre plateforme
+      </p>
+      <button class="btn btn-cta" routerLink="/suggestions">
+        Commencer maintenant
+        <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </section>
+</div>
