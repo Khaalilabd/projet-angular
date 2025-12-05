@@ -1,10 +1,17 @@
 <div class="details-container">
   <div *ngIf="suggestion; else notFound">
-    <!-- Bouton retour -->
-    <button class="back-btn" routerLink="/suggestions">
-      <i class="icon-back">←</i>
-      Retour à la liste
-    </button>
+    <!-- Boutons de navigation -->
+    <div class="navigation-buttons">
+      <button class="back-btn" routerLink="/suggestions">
+        <i class="icon-back">←</i>
+        Retour à la liste
+      </button>
+      <button class="next-btn" (click)="goToNext()">
+        Next
+        <i class="icon-next">→</i>
+      </button>
+    </div> 
+
 
     <!-- Carte de détails -->
     <div class="details-card">

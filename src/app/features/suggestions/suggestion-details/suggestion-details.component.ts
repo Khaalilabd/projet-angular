@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Suggestion } from '../../../models/suggestion';
 
 @Component({
@@ -95,7 +95,7 @@ export class SuggestionDetailsComponent implements OnInit {
     }
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -105,5 +105,15 @@ export class SuggestionDetailsComponent implements OnInit {
         this.suggestion = this.suggestions.find(s => s.id === this.suggestionId);
       }
     });
+  }
+
+  goToNext(): void {
+    if (this.suggestionId !== null) {
+      const currentIndex = this.suggestions.findIndex(s => s.id === this.suggestionId);
+      if (currentIndex !== -1 && currentIndex < this.suggestions.length - 1) {
+        const nextSuggestion = this.suggestions[currentIndex + 1];
+        this.router.navigate(['/suggestions', nextSuggestion.id]);
+      }
+    }
   }
 }
